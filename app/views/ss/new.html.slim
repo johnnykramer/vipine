@@ -1,0 +1,21 @@
+.container
+  nav.uk-navbar
+    ul.uk-navbar-nav
+      li
+        =link_to 'Index', root_path
+      li.uk-active
+        =link_to 'New', ss_new_path
+      li
+        =link_to 'Show', ss_show_path
+    
+  h1 New
+  
+  =form_for @pair, url: {action: "create"}, html: {class: "uk-form"} do |f|
+    .uk-form-row
+      =label_tag(:port, "Port:", class: "uk-form-label")
+      =f.text_field :port
+    .uk-form-row
+      =label_tag(:password, "Password:", class: "uk-form-label")
+      =f.text_field :password
+    .uk-form-row
+      =f.submit "Create", class: "uk-button-success"
