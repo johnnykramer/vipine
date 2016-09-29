@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Vipine
+    = csrf_meta_tags
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container
+      nav.uk-navbar
+        ul.uk-navbar-nav
+          li
+            =link_to 'Dashboard', root_path
+          li
+            =link_to 'New user', new_user_path
+      =yield
